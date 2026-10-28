@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edgerunners | Night City Crew</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section class="hero-section" id="home">
+  <header class="header">
+    <nav class="navbar">
+      <a href="#home" onclick="scrollToSection('home')">Home</a>
+      <a href="#about" onclick="scrollToSection('about')">About us</a>
+      <a href="#home" class="logo"><img src="images/logo.png" alt="Cyberpunk Edgerunners" onclick="scrollToSection ('home')"></a>
+      <a href="#persons" onclick="scrollToSection('persons')">Persons</a>
+      <a href="#contact" onclick="scrollToSection('contact')">Contact us</a>
+    </nav>
+  </header>
+
+  <div class="hero-content">
+    <h1 class="glitch" data-text="Cyberpunk">Cyberpunk</h1>
+    <p class="glitch hero-subtitle" data-text="Edgerunners">Edgerunners</p>
+  </div>
+</section>
+
+
+<section class="persons-section" id="persons">
+  <h2 class="section-title">The Crew</h2>
+  <p class="section-subtitle">// 16 legends of Night City</p>
+  <div class="persons-grid" id="persons-grid"></div>
+</section>
+
+
+
+<!-- //FOOTER// -->
+
+<footer class="footer" id="contact">
+  <div class="footer-grid">
+
+    <div class="footer-col">
+      <img src="images/logo.png" alt="Cyberpunk Edgerunners" class="footer-logo">
+      <p class="footer-text">The edgerunners of Night City. Live fast, die young, leave a legend.</p>
+      <div class="socials">
+        <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://x.com" target="_blank" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://youtube.com" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://discord.com" target="_blank" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+      </div>
+    </div>
+
+
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul class="footer-links">
+        <li><a href="#home" onclick="scrollToSection('home')">Home</a></li>
+        <li><a href="#about" onclick="scrollToSection('about')">About us</a></li>
+        <li><a href="#persons" onclick="scrollToSection('persons')">Persons</a></li>
+        <li><a href="#contact" onclick="scrollToSection('contact')">Contact us</a></li>
+      </ul>
+    </div>
+
+
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul class="footer-contact">
+        <li><i class="fa-solid fa-location-dot"></i> Afterlife Bar, Watson, Night City </li>
+        <li><i class="fa-solid fa-envelope"></i> contact@cyberpunkedgerunners.com </li>
+        <li><i class="fa-solid fa-phone"></i> +1 (555) 123-4567 </li>
+      </ul>
+    </div>
+
+
+    <div class="footer-col">
+      <h4>Newsletter</h4>
+      <p class="footer-text">Get gigs and crew news straight to your inbox.</p>
+      <form class="newsletter" onsubmit="subscribe(event)">
+        <input type="email" id="newsletter-email" placeholder="Your@email.com" required>
+        <button type="submit">Join</button>
+        </form>
+        <p class="newsletter-msg" id="newsletter-msg"></p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Edgerunners // Night City Crew</p>
+    </div>
+
+    </footer>
+
+
+
+
+  
+
+
+
+
+    <script>
+  function scrollToSection(id) {
+    event.preventDefault();
+    document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+}
+
+
+
+const persons = [
+  { name: "David Martinez", age: 17, specialist: "Solo", city: "Santo Domingo", image: "characters/David.png",
+    bio: "Street kid who drops out of Arasaka Academy and installs a military-grade Sandevistan to survive Night City." },
+
+  { name: "Lucy", age: 20, specialist: "Netrunner", city: "Watson", image: "characters/Lucy.png",
+    bio: "Elite netrunner with a quiet past who dreams of escaping Night City for the Moon." },
+
+  { name: "Rebecca", age: 18, specialist: "Gunner", city: "Watson", image: "characters/Rebecca.png",
+    bio: "Small, loud and dangerous. Carries oversized guns and never backs down from a fight." },
+
+  { name: "Maine", age: 38, specialist: "Crew Leader", city: "Watson", image: "characters/Maine.png",
+    bio: "Heavily chromed leader who keeps his edgerunners together, no matter the cost." },
+
+  { name: "Dorio", age: 36, specialist: "Solo", city: "Watson", image: "characters/Derio.png",
+    bio: "Maine's partner and the crew's muscle: calm, loyal and built like a tank." },
+
+  { name: "Pilar", age: 25, specialist: "Techie", city: "Watson", image: "characters/Pilar.png",
+    bio: "Rebecca's older brother and the crew's techie, always ready with a bad joke." },
+
+  { name: "Kiwi", age: 34, specialist: "Netrunner", city: "Japantown", image: "characters/Kiwi.png",
+    bio: "Veteran netrunner who taught Lucy everything she knows. Trusts nobody." },
+    
+  { name: "Falco", age: 40, specialist: "Driver", city: "Heywood", image: "characters/Falco.png",
+    bio: "The crew's getaway driver and one of Maine's oldest friends." },
+
+  { name: "Faraday", age: 45, specialist: "Fixer", city: "City Center", image: "characters/Faraday.png",
+    bio: "Smooth-talking fixer who hands out the jobs, and always looks after his own interests first." },
+
+  { name: "Gloria Martinez", age: 40, specialist: "Paramedic", city: "Santo Domingo", image: "characters/Gloria Martinez.png",
+    bio: "David's mother, a hardworking paramedic who wants a better life for her son." },
+
+  { name: "Doc", age: 55, specialist: "Ripperdoc", city: "Watson", image: "characters/Doc.png",
+    bio: "Back-alley ripperdoc who installs the chrome that changes David's life." },
+    
+  { name: "Katsuo Tanaka", age: 17, specialist: "Student", city: "Westbrook", image: "characters/Katsuo Tanaka.png",
+    bio: "Spoiled Arasaka Academy student and David's classmate." },
+
+  { name: "Adam Smasher", age: 60, specialist: "Arasaka Enforcer", city: "City Center", image: "characters/Adam Smasher.png",
+    bio: "Arasaka's full-body cyborg. More machine than man, and the deadliest solo in the city." },
+
+  { name: "Weak Kingsley", age: 55, specialist: "Veteran Edgerunner", city: "Night City", image: "characters/Weak Kingsley.png",
+    bio: "Once known as 'King', a veteran edgerunner whose chrome is gone, now living in the shadow of his former glory." },
+
+  { name: "D", age: 25, specialist: "Netrunner", city: "Badlands", image: "characters/D.png",
+    bio: "A Snake Nation netrunner hunting the killer who wiped out his clan." },
+
+  { name: "Roman Carax", age: 17, specialist: "Filmmaker", city: "Night City", image: "characters/Roman Carax.png",
+    bio: "A young cinephile with a camera, recording real lives in a city that only cares about braindances." }
+    
+];
+
+const grid = document.getElementById("persons-grid");
+
+for (let i = 0; i < persons.length; i++) {
+  const p = persons[i];
+  grid.innerHTML += `
+    <article class="card">
+      <div class="card-img">
+        <img src="${p.image}" alt="${p.name}">
+        <span class="card-role">${p.specialist}</span>
+      </div>
+      <div class="card-body">
+        <h3 class="card-name">${p.name}</h3>
+        <ul class="card-info">
+          <li><span>AGE</span>${p.age}</li>
+          <li><span>CITY</span>${p.city}</li>
+          
+        </ul>
+        <p class="card-bio">${p.bio}</p>
+      </div>
+    </article>`;
+
+
+    function subscribe(e) {
+  e.preventDefault(); 
+  document.getElementById("newsletter-msg").textContent = "You're in, choom. Welcome to the crew.";
+  document.getElementById("newsletter-email").value = "";
+}
+
+}
+
+
+
+
+</script>
+    
+</body>
+</html>
